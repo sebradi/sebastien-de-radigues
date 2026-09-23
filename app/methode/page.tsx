@@ -5,12 +5,17 @@ import { CtaBand } from "@/components/cta-band";
 import { Divider } from "@/components/divider";
 import { IconBadge, type IconName } from "@/components/icon";
 import { SectionRow } from "@/components/section-row";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Ma méthode",
-  description:
-    "Comment j'aborde une structure, en sept principes : diagnostiquer, prioriser, simplifier, impliquer, mesurer, itérer, transmettre.",
-};
+const title = "Ma méthode de structuration — Sébastien de Radiguès";
+const description =
+  "Sept principes pour structurer une organisation qui grandit vite : diagnostiquer, prioriser, simplifier, impliquer, mesurer, itérer, transmettre.";
+
+export const metadata: Metadata = pageMetadata({
+  title,
+  description,
+  path: "/methode",
+});
 
 const PRINCIPLES: { title: string; body: string; icon: IconName }[] = [
   {

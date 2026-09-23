@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Container } from "@/components/container";
 import { CtaBand } from "@/components/cta-band";
 import { DomainCard } from "@/components/domain-card";
@@ -5,6 +6,17 @@ import { Hero } from "@/components/hero";
 import { MethodBanner } from "@/components/method-banner";
 import { SectionRow } from "@/components/section-row";
 import { SituationsBand } from "@/components/situations-band";
+import { pageMetadata } from "@/lib/metadata";
+
+const title = "Sébastien de Radiguès — Chief of Staff externe";
+const description =
+  "Chief of Staff externe basé en Wallonie, j'aide les startups et PME à structurer leur marketing et leurs opérations, en stratège et en exécutant.";
+
+export const metadata: Metadata = pageMetadata({
+  title,
+  description,
+  path: "/",
+});
 
 export default function Home() {
   return (
