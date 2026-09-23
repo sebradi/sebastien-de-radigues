@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ma méthode — Sébastien de Radiguès</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F8F8F5;
+    --ink:#17181A;
+    --dark:#2B2A24;
+    --muted:#65675F;
+    --line:#E1E0DA;
+    --orange:#DE5B1F;
+    --orange-ink:#8C3B12;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:800px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;}
+
+  header{display:flex;justify-content:space-between;align-items:center;padding:26px 0;}
+  .name{font-family:'Fraunces',serif;font-size:1.02rem;font-weight:500;text-decoration:none;}
+  nav{display:flex;gap:20px;align-items:center;}
+  nav a{color:var(--muted);text-decoration:none;font-size:.9rem;border-bottom:1px solid transparent;padding-bottom:2px;transition:color .15s,border-color .15s;}
+  nav a:hover{color:var(--ink);border-color:var(--orange);}
+
+  .section{padding:36px 0;}
+  h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.9rem,5.5vw,2.6rem);line-height:1.15;margin:0 0 16px;}
+  .subtitle{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--orange-ink);max-width:32ch;line-height:1.4;margin:0;}
+
+  .intro-grid{display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:start;}
+  .photo{position:relative;aspect-ratio:4/5;background:#EDECE6;border:1px solid var(--line);}
+  .photo .corner{position:absolute;width:20px;height:20px;}
+  .photo .corner.tl{top:-1px;left:-1px;}
+  .photo .corner.br{bottom:-1px;right:-1px;transform:rotate(180deg);}
+  .photo .cap{position:absolute;bottom:10px;left:10px;right:10px;font-size:.72rem;font-style:italic;color:var(--muted);}
+  h2.sub{font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;margin:0 0 10px;color:var(--orange-ink);}
+  p{font-size:1.02rem;line-height:1.65;margin:0;max-width:60ch;}
+
+  .band{background:var(--dark);color:#F0EFE9;}
+  .band .section{padding:52px 0;text-align:center;}
+  .pull{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.3rem,3.6vw,1.7rem);line-height:1.45;max-width:44ch;margin:0 auto;}
+  .pull em{color:#F0A87C;font-style:italic;}
+
+  .principles{border-top:1px solid var(--line);margin-top:8px;}
+  .p-row{display:grid;grid-template-columns:64px 1fr;gap:22px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start;}
+  .p-num{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--orange);line-height:1;}
+  .p-title{font-family:'Fraunces',serif;font-weight:500;font-size:1.1rem;margin:0 0 8px;}
+  .p-body{font-size:.98rem;line-height:1.6;max-width:56ch;color:var(--ink);}
+
+  .cta{background:var(--orange);color:#1C0F06;}
+  .cta .wrap{text-align:center;}
+  .cta .section{padding:44px 0;}
+  .cta p{max-width:44ch;font-size:1.02rem;margin:0 auto 20px;}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);padding:14px 26px;text-decoration:none;font-size:.98rem;font-weight:500;transition:transform .15s ease;}
+  .btn:hover{transform:translateY(-2px);}
+
+  footer{padding:30px 0 46px;}
+  footer a{color:var(--muted);text-decoration:none;font-size:.86rem;}
+  footer a:hover{color:var(--ink);}
+
+  @media (max-width:620px){
+    .intro-grid{grid-template-columns:1fr;}
+    .photo{max-width:220px;}
+    .p-row{grid-template-columns:44px 1fr;gap:14px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <header>
+      <a class="name" href="#">Sébastien de Radiguès</a>
+      <nav><a href="#">Accueil</a><a href="#linkedin">LinkedIn</a></nav>
+    </header>
+
+    <section class="section">
+      <h1>Ma méthode</h1>
+      <p class="subtitle">J'ai commencé à structurer des organisations avant de mettre ce mot dessus.</p>
+    </section>
+
+    <section class="section intro-grid">
+      <div class="photo">
+        <svg class="corner tl" viewBox="0 0 20 20"><path d="M2 8V2H8" stroke="#DE5B1F" stroke-width="2" fill="none"/></svg>
+        <svg class="corner br" viewBox="0 0 20 20"><path d="M2 8V2H8" stroke="#DE5B1F" stroke-width="2" fill="none"/></svg>
+        <span class="cap">photo à intégrer</span>
+      </div>
+      <div>
+        <h2 class="sub">Le studio</h2>
+        <p>Pendant sept ans, dans un startup studio, co-lancer des startups voulait dire partir d'une idée floue et construire, en même temps, l'organisation qui la porte. Les opérations. Les premières ventes. Le marketing. Parfois une levée de fonds. Parfois les premiers recrutements.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="band">
+    <div class="wrap section">
+      <p class="pull">Une startup qui lève des fonds sans process de vente clair improvise sa croissance. Une équipe qui recrute sans organisation lisible <em>dilue son énergie</em> au lieu de l'accélérer.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="section">
+      <h2 class="sub">Le même réflexe, ailleurs</h2>
+      <p>Pendant un an et demi, responsable marketing dans une startup, j'ai porté cette même logique sur un département entier plutôt que sur une startup entière. Repérer ce qui, dans le désordre apparent, doit devenir un système. Poser une structure qui tient, pas une usine à gaz.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="sub" style="margin-bottom:24px;">Sept principes</h2>
+      <div class="principles">
+        <div class="p-row">
+          <span class="p-num">01</span>
+          <div><h3 class="p-title">Diagnostiquer</h3><p class="p-body">Comprendre ce qui existe déjà avant de vouloir le changer.</p></div>
+        </div>
+        <div class="p-row">
+          <span class="p-num">02</span>
+          <div><h3 class="p-title">Prioriser</h3><p class="p-body">Prioriser ce qui débloque le plus, pas ce qui se voit le plus.</p></div>
+        </div>
+        <div class="p-row">
+          <span class="p-num">03</span>
+          <div><h3 class="p-title">Simplifier</h3><p class="p-body">Construire des systèmes simples qui tiennent, jamais des process lourds copiés d'un livre.</p></div>
+        </div>
+        <div class="p-row">
+          <span class="p-num">04</span>
+          <div><h3 class="p-title">Impliquer</h3><p class="p-body">Un process qui ignore les humains qui doivent le suivre échoue, même parfait sur le papier. L'adhésion compte autant que la conception.</p></div>
+        </div>
+        <div class="p-row">
+          <span class="p-num">05</span>
+          <div><h3 class="p-title">Mesurer</h3><p class="p-body">Un process est un mindset avant d'être un outil. Mesurer, comprendre, améliorer avec les retours du terrain, même sans logiciel, même offline.</p></div>
+        </div>
+        <div class="p-row">
+          <span class="p-num">06</span>
+          <div><h3 class="p-title">Itérer</h3><p class="p-body">Un process n'est jamais bon du premier coup. Il s'améliore par itérations successives, jamais par une refonte parfaite dès le départ.</p></div>
+        </div>
+        <div class="p-row">
+          <span class="p-num">07</span>
+          <div><h3 class="p-title">Transmettre</h3><p class="p-body">Transmettre plutôt que rendre dépendant.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="cta">
+    <div class="wrap section">
+      <p>La suite, ça commence par une conversation, sans engagement, pour comprendre votre situation avant de parler de quoi que ce soit d'autre.</p>
+      <a class="btn" id="linkedin" href="#">
+        Me contacter sur LinkedIn
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <footer><a href="#linkedin">linkedin.com/in/sebastienderadigues</a></footer>
+  </div>
+
+</body>
+</html>

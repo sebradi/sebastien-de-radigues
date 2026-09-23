@@ -1,69 +1,103 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowIcon } from "@/components/arrow-icon";
+import { Container } from "@/components/container";
+import { CtaBand } from "@/components/cta-band";
+import { Hero } from "@/components/hero";
+import { SituationsBand } from "@/components/situations-band";
+import { SubHeading, Text } from "@/components/typography";
+
+const DOMAINS = [
+  {
+    title: "Votre marketing produit-il des résultats, ou seulement du contenu ?",
+    body: "Une équipe marketing sans direction claire travaille beaucoup et avance peu. Je pose une stratégie qui priorise, je structure ce qui manque, et j'exécute ou je transmets, ponctuellement ou en format fractionné selon vos besoins.",
+  },
+  {
+    title: "Vos process tiennent-ils encore la croissance que vous visez ?",
+    body: "Une organisation qui grandit sans revoir ses process ne ralentit pas progressivement. Elle craque d'un coup. Je clarifie les responsabilités, je repère les points de friction avant qu'ils ne coûtent cher, et j'intègre l'IA là où elle change vraiment l'équation.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      <Container>
+        <Hero />
+
+        <section className="space-y-[30px] py-9">
+          <div>
+            <SubHeading>Le point de bascule</SubHeading>
+            <Text>
+              Le jour où il faut arbitrer entre trois urgences à la fois, ce qui
+              marchait à l&apos;instinct ne suffit plus. Vous avez construit
+              votre entreprise ainsi, brique par brique, sans suivre de plan
+              précis. Ça a tenu, jusqu&apos;à un certain point.
+            </Text>
+          </div>
+          <div>
+            <SubHeading>Ce que ça coûte</SubHeading>
+            <Text>
+              Vous passez vos journées à éteindre des urgences plutôt
+              qu&apos;à avancer. Toutes les décisions reviennent vers vous,
+              parce que rien n&apos;a été structuré pour qu&apos;il en soit
+              autrement. Le recul nécessaire pour changer ça, vous ne
+              l&apos;avez plus.
+            </Text>
+          </div>
+          <div>
+            <SubHeading>Mon rôle</SubHeading>
+            <Text>
+              Je m&apos;appelle Sébastien. Je ne suis pas un consultant qui
+              conseille sans jamais mettre les mains dans le cambouis, ni un
+              coach qui accompagne sans jamais faire à votre place. Je pense la
+              stratégie et je l&apos;exécute, ou je forme votre équipe à le
+              faire.
+            </Text>
+            <Text className="mt-3.5">
+              J&apos;ai passé sept ans à construire ce genre de structure de
+              l&apos;intérieur, dans un startup studio, avant de le refaire sur
+              un département marketing entier. J&apos;interviens
+              aujourd&apos;hui comme Chief of Staff externe, en partenaire
+              opérationnel indépendant : vous parlez toujours à la même
+              personne, jamais à une agence ou à une équipe de juniors.
+            </Text>
+          </div>
+        </section>
+      </Container>
+
+      <SituationsBand />
+
+      <Container>
+        <section className="grid grid-cols-1 gap-5 py-9 sm:grid-cols-2">
+          {DOMAINS.map((domain) => (
+            <article
+              key={domain.title}
+              className="border border-t-[3px] border-line border-t-orange px-6 py-[26px]"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+              <h3 className="mb-3 font-serif text-[1.14rem] leading-[1.35] font-medium italic">
+                {domain.title}
+              </h3>
+              <p className="text-[0.98rem] leading-[1.65]">{domain.body}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className="py-9">
+          <Link
+            href="/methode"
+            className="group flex items-center justify-between gap-5 border border-ink px-[26px] py-[22px] transition-colors duration-150 hover:bg-ink hover:text-paper focus-visible:bg-ink focus-visible:text-paper focus-visible:outline-none"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <span>
+              <span className="block font-serif text-[1.25rem]">Ma méthode</span>
+              <span className="mt-1 block text-[0.9rem] text-muted group-hover:text-[#C9C9C2] group-focus-visible:text-[#C9C9C2]">
+                Comment j&apos;aborde une structure, en sept principes.
+              </span>
+            </span>
+            <ArrowIcon size={20} />
+          </Link>
+        </section>
+      </Container>
+
+      <CtaBand />
+    </>
   );
 }

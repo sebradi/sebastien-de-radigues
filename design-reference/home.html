@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sébastien de Radiguès — Chief of Staff externe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F8F8F5;
+    --ink:#17181A;
+    --dark:#2B2A24;
+    --muted:#65675F;
+    --line:#E1E0DA;
+    --orange:#DE5B1F;
+    --orange-ink:#8C3B12;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:800px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;}
+
+  header{display:flex;justify-content:space-between;align-items:center;padding:26px 0;}
+  .name{font-family:'Fraunces',serif;font-size:1.02rem;font-weight:500;text-decoration:none;}
+  nav{display:flex;gap:20px;align-items:center;}
+  nav a{color:var(--muted);text-decoration:none;font-size:.9rem;border-bottom:1px solid transparent;padding-bottom:2px;transition:color .15s,border-color .15s;}
+  nav a:hover{color:var(--ink);border-color:var(--orange);}
+
+  .hero{position:relative;padding:44px 0 30px;overflow:hidden;}
+  .mark{position:absolute;top:6px;right:-6px;width:64px;height:64px;opacity:.55;pointer-events:none;}
+  .kicker{font-size:.95rem;color:var(--orange-ink);margin:0 0 20px;font-weight:500;}
+  h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2rem,6vw,2.85rem);line-height:1.16;margin:0;max-width:16ch;}
+  h1 em{font-style:italic;color:var(--orange-ink);}
+  .hero-line{display:block;overflow:hidden;}
+  .hero-line span{display:block;}
+
+  .section{padding:36px 0;}
+  .band{background:var(--dark);color:#F0EFE9;}
+  .band .section{padding:44px 0;}
+  h2.sub{font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;margin:0 0 10px;color:var(--orange-ink);}
+  .band h2.sub{color:#F0A87C;}
+  p{font-size:1.02rem;line-height:1.65;margin:0;max-width:60ch;}
+  .stack > * + *{margin-top:30px;}
+
+  .band .lede{color:#C7C5BB;font-size:.98rem;margin-bottom:22px;}
+  .sit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:640px;}
+  .sit-card{position:relative;background:#37352C;border:1px solid #46432F;padding:20px 18px 18px 20px;line-height:1.5;font-size:.98rem;}
+  .sit-card .corner{position:absolute;top:8px;left:8px;width:14px;height:14px;}
+  .sit-card.offset{margin-top:26px;}
+  @media (max-width:560px){.sit-grid{grid-template-columns:1fr;max-width:none;}.sit-card.offset{margin-top:0;}}
+  .qualifier{margin-top:24px;font-size:.98rem;color:#C7C5BB;max-width:60ch;}
+
+  .domains{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .domain{border:1px solid var(--line);padding:26px 24px;border-top:3px solid var(--orange);}
+  .domain h3{font-family:'Fraunces',serif;font-weight:500;font-style:italic;font-size:1.14rem;line-height:1.35;margin:0 0 12px;}
+  .domain p{font-size:.98rem;max-width:none;}
+
+  .method-card{display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid var(--ink);padding:22px 26px;text-decoration:none;transition:background .15s ease;}
+  .method-card:hover{background:var(--ink);color:var(--paper);}
+  .method-card:hover .method-sub{color:#C9C9C2;}
+  .method-title{font-family:'Fraunces',serif;font-size:1.25rem;}
+  .method-sub{display:block;margin-top:4px;font-size:.9rem;color:var(--muted);}
+
+  .cta{background:var(--orange);color:#1C0F06;}
+  .cta .section{padding:48px 0;}
+  .cta .wrap{text-align:center;}
+  .cta p{max-width:48ch;font-size:1.08rem;margin:0 auto 22px;}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);padding:14px 26px;text-decoration:none;font-size:.98rem;font-weight:500;transition:transform .15s ease;}
+  .btn:hover{transform:translateY(-2px);}
+
+  footer{padding:30px 0 46px;}
+  footer a{color:var(--muted);text-decoration:none;font-size:.86rem;}
+  footer a:hover{color:var(--ink);}
+
+  @media (max-width:640px){.domains{grid-template-columns:1fr;}}
+  @media (prefers-reduced-motion: reduce){h1 .hero-line span{transform:none!important;opacity:1!important;}}
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <header>
+      <a class="name" href="#">Sébastien de Radiguès</a>
+      <nav><a href="#methode">Ma méthode</a><a href="#linkedin">LinkedIn</a></nav>
+    </header>
+
+    <section class="hero">
+      <svg class="mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 20V4H20" stroke="#DE5B1F" stroke-width="2"/>
+        <path d="M60 44V60H44" stroke="#DE5B1F" stroke-width="2"/>
+      </svg>
+      <p class="kicker">Chief of Staff externe, basé en Wallonie.</p>
+      <h1 id="headline">
+        <span class="hero-line"><span>L'instinct suffit pour</span></span>
+        <span class="hero-line"><span>lancer une entreprise.</span></span>
+        <span class="hero-line"><span>Il ne suffit plus pour la <em>faire tenir</em>.</span></span>
+      </h1>
+    </section>
+
+    <section class="section stack">
+      <div>
+        <h2 class="sub">Le point de bascule</h2>
+        <p>Le jour où il faut arbitrer entre trois urgences à la fois, ce qui marchait à l'instinct ne suffit plus. Vous avez construit votre entreprise ainsi, brique par brique, sans suivre de plan précis. Ça a tenu, jusqu'à un certain point.</p>
+      </div>
+      <div>
+        <h2 class="sub">Ce que ça coûte</h2>
+        <p>Vous passez vos journées à éteindre des urgences plutôt qu'à avancer. Toutes les décisions reviennent vers vous, parce que rien n'a été structuré pour qu'il en soit autrement. Le recul nécessaire pour changer ça, vous ne l'avez plus.</p>
+      </div>
+      <div>
+        <h2 class="sub">Mon rôle</h2>
+        <p>Je m'appelle Sébastien. Je ne suis pas un consultant qui conseille sans jamais mettre les mains dans le cambouis, ni un coach qui accompagne sans jamais faire à votre place. Je pense la stratégie et je l'exécute, ou je forme votre équipe à le faire.</p>
+        <p style="margin-top:14px;">J'ai passé sept ans à construire ce genre de structure de l'intérieur, dans un startup studio, avant de le refaire sur un département marketing entier. J'interviens aujourd'hui comme Chief of Staff externe, en partenaire opérationnel indépendant : vous parlez toujours à la même personne, jamais à une agence ou à une équipe de juniors.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="band">
+    <div class="wrap section">
+      <p class="lede">Reconnaissez-vous une de ces situations ?</p>
+      <div class="sit-grid">
+        <div class="sit-card"><svg class="corner" viewBox="0 0 20 20"><path d="M2 8V2H8" stroke="#DE5B1F" stroke-width="2" fill="none"/></svg>Toutes les décisions repassent par vous, même les plus mineures.</div>
+        <div class="sit-card offset"><svg class="corner" viewBox="0 0 20 20"><path d="M2 8V2H8" stroke="#DE5B1F" stroke-width="2" fill="none"/></svg>Un chiffre important change selon la personne qui vous le communique.</div>
+        <div class="sit-card"><svg class="corner" viewBox="0 0 20 20"><path d="M2 8V2H8" stroke="#DE5B1F" stroke-width="2" fill="none"/></svg>Votre équipe a grandi, mais plus personne ne sait exactement qui décide quoi.</div>
+        <div class="sit-card offset"><svg class="corner" viewBox="0 0 20 20"><path d="M2 8V2H8" stroke="#DE5B1F" stroke-width="2" fill="none"/></svg>Chaque nouvelle recrue apprend le métier en observant, parce que rien n'est écrit nulle part.</div>
+        <div class="sit-card"><svg class="corner" viewBox="0 0 20 20"><path d="M2 8V2H8" stroke="#DE5B1F" stroke-width="2" fill="none"/></svg>Vous avez les bons outils, mais chacun les utilise à sa manière.</div>
+        <div class="sit-card offset"><svg class="corner" viewBox="0 0 20 20"><path d="M2 8V2H8" stroke="#DE5B1F" stroke-width="2" fill="none"/></svg>Vous savez qu'il faut structurer. Vous n'avez simplement jamais le temps de vous y mettre.</div>
+      </div>
+      <p class="qualifier">Ça vous parle si votre structure a dépassé le stade où vous pouvez tout gérer seul, mais n'a pas encore de fonction Marketing ou Opérations dédiée.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="section">
+      <div class="domains">
+        <div class="domain">
+          <h3>Votre marketing produit-il des résultats, ou seulement du contenu ?</h3>
+          <p>Une équipe marketing sans direction claire travaille beaucoup et avance peu. Je pose une stratégie qui priorise, je structure ce qui manque, et j'exécute ou je transmets, ponctuellement ou en format fractionné selon vos besoins.</p>
+        </div>
+        <div class="domain">
+          <h3>Vos process tiennent-ils encore la croissance que vous visez ?</h3>
+          <p>Une organisation qui grandit sans revoir ses process ne ralentit pas progressivement. Elle craque d'un coup. Je clarifie les responsabilités, je repère les points de friction avant qu'ils ne coûtent cher, et j'intègre l'IA là où elle change vraiment l'équation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="methode">
+      <a class="method-card" href="#">
+        <span>
+          <span class="method-title">Ma méthode</span>
+          <span class="method-sub">Comment j'aborde une structure, en sept principes.</span>
+        </span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </section>
+  </div>
+
+  <div class="cta">
+    <div class="wrap section">
+      <p>La suite, ça commence par une conversation, sans engagement, pour comprendre votre situation avant de parler de quoi que ce soit d'autre.</p>
+      <a class="btn" id="linkedin" href="#">
+        Me contacter sur LinkedIn
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <footer><a href="#linkedin">linkedin.com/in/sebastienderadigues</a></footer>
+  </div>
+
+<script>
+  const lines = document.querySelectorAll('.hero-line span');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  lines.forEach((el,i)=>{
+    if(reduced){ el.style.opacity='1'; return; }
+    el.style.transform='translateY(100%)'; el.style.opacity='0';
+    el.animate(
+      [{transform:'translateY(100%)',opacity:0},{transform:'translateY(0)',opacity:1}],
+      {duration:700,delay:120+i*140,easing:'cubic-bezier(.22,.9,.32,1)',fill:'both'}
+    );
+  });
+</script>
+</body>
+</html>
