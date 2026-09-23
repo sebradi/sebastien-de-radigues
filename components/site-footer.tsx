@@ -1,19 +1,24 @@
 import Link from "next/link";
-import { LINKEDIN_LABEL, SITE_NAME } from "@/lib/site";
+import { LINKEDIN_LABEL } from "@/lib/site";
 import { Container } from "./container";
 import { NavLinks } from "./nav-links";
 
 export function SiteFooter() {
   return (
     <Container>
-      <footer className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 pt-[30px] pb-[46px] text-[0.86rem]">
+      <footer className="pt-16 pb-10 text-center">
         <Link
           href="/"
-          className="font-serif text-muted transition-colors hover:text-ink"
+          className="mb-[18px] block font-serif text-[clamp(2.4rem,9vw,4.4rem)] leading-none transition-colors hover:text-orange-ink"
         >
-          {SITE_NAME}
+          Sébastien
+          <br />
+          de Radiguès
         </Link>
-        <NavLinks linkedinLabel={LINKEDIN_LABEL} />
+        <NavLinks
+          linkedinLabel={LINKEDIN_LABEL}
+          className="flex-wrap justify-center text-[0.9rem]"
+        />
       </footer>
     </Container>
   );

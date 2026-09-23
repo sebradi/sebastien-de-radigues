@@ -1,4 +1,6 @@
 import { CornerMark } from "./corner-mark";
+import { Divider } from "./divider";
+import { Icon } from "./icon";
 
 const LINES: React.ReactNode[] = [
   "L'instinct suffit pour",
@@ -11,20 +13,21 @@ const LINES: React.ReactNode[] = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-11 pb-[30px]">
+    <section className="relative pt-[52px]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1.5 -right-1.5 size-16 opacity-55"
+        className="pointer-events-none absolute top-0 -right-1 size-[70px] opacity-60"
       >
-        <CornerMark className="absolute -top-px -left-px size-[53px]" />
-        <CornerMark className="absolute -right-px -bottom-px size-[53px] rotate-180" />
+        <CornerMark className="absolute -top-px -left-px size-[58px]" />
+        <CornerMark className="absolute -right-px -bottom-px size-[58px] rotate-180" />
       </div>
 
-      <p className="mb-5 text-[0.95rem] font-medium text-orange-ink">
+      <p className="mb-[26px] inline-flex items-center gap-2 rounded-full bg-orange-soft px-3.5 py-[7px] text-[0.85rem] font-semibold text-orange-ink">
+        <Icon name="clock" className="size-3.5" />
         Chief of Staff externe, basé en Wallonie.
       </p>
 
-      <h1 className="max-w-[16ch] font-serif text-[clamp(2rem,6vw,2.85rem)] leading-[1.16] font-normal">
+      <h1 className="max-w-[15ch] font-serif text-[clamp(2.4rem,7vw,3.6rem)] leading-[1.08] font-normal">
         {LINES.map((line, i) => (
           <span key={i} className="block overflow-hidden">
             <span
@@ -36,6 +39,8 @@ export function Hero() {
           </span>
         ))}
       </h1>
+
+      <Divider className="mt-14" />
     </section>
   );
 }

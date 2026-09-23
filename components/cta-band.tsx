@@ -1,26 +1,25 @@
 import { LINKEDIN_URL } from "@/lib/site";
-import { ArrowIcon } from "./arrow-icon";
 import { Container } from "./container";
+import { PillButton } from "./pill-button";
 
 export function CtaBand() {
   return (
-    <section className="bg-orange text-cta-ink">
-      <Container className="py-12 text-center">
-        <p className="mx-auto mb-[22px] max-w-[48ch] text-[1.08rem] leading-[1.65]">
-          La suite, ça commence par une conversation, sans engagement, pour
-          comprendre votre situation avant de parler de quoi que ce soit
-          d&apos;autre.
-        </p>
-        <a
-          href={LINKEDIN_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-12 items-center gap-2.5 bg-ink px-[26px] py-3.5 text-[0.98rem] font-medium text-paper transition-transform duration-150 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink motion-reduce:hover:translate-y-0"
-        >
-          Me contacter sur LinkedIn
-          <ArrowIcon />
-        </a>
-      </Container>
-    </section>
+    <Container>
+      <section className="mb-2 grid grid-cols-1 items-center gap-[30px] rounded-band bg-ink px-[34px] py-[52px] text-paper min-[680px]:grid-cols-[1.1fr_1fr]">
+        <h2 className="font-serif text-[clamp(1.5rem,4vw,2rem)] leading-[1.3] font-normal italic">
+          Discutons de votre structure.
+        </h2>
+        <div>
+          <p className="mb-5 max-w-[36ch] text-[0.98rem] leading-[1.65] text-subtle">
+            La suite, ça commence par une conversation, sans engagement, pour
+            comprendre votre situation avant de parler de quoi que ce soit
+            d&apos;autre.
+          </p>
+          <PillButton href={LINKEDIN_URL} variant="orange" external>
+            Me contacter sur LinkedIn
+          </PillButton>
+        </div>
+      </section>
+    </Container>
   );
 }

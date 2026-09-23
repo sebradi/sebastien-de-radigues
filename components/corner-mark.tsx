@@ -1,6 +1,4 @@
 // Le motif du site : un coin de cadre orange, deux traits formant un angle.
-// Utilisé à exactement trois endroits : hero de la home, cartes de situation,
-// emplacement photo de « Ma méthode ».
 export function CornerMark({ className = "" }: { className?: string }) {
   return (
     <svg

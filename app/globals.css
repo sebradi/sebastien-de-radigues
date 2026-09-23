@@ -5,16 +5,29 @@
   --color-ink: #17181a;
   --color-muted: #65675f;
   --color-line: #e1e0da;
+  --color-subtle: #c9c9c2;
+
   --color-orange: #de5b1f;
   --color-orange-ink: #8c3b12;
-  --color-orange-soft: #f0a87c;
+  --color-orange-soft: #fbeae0;
+  --color-orange-glow: #f0a87c;
+  --color-orange-watermark: #f0d2bc;
   --color-cta-ink: #1c0f06;
 
+  --color-gold: #b98a2e;
+  --color-gold-soft: #f5ebd8;
+  --color-gold-ink: #2a1f06;
+  --color-rust: #a8451f;
+  --color-rust-soft: #f6e4dc;
+  --color-rust-text: #fbe4da;
+
   --color-dark: #2b2a24;
+  --color-dark-raised: #3b392f;
   --color-dark-text: #f0efe9;
   --color-dark-muted: #c7c5bb;
-  --color-dark-card: #37352c;
-  --color-dark-line: #46432f;
+
+  --radius-card: 16px;
+  --radius-band: 28px;
 
   --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;

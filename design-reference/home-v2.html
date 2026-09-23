@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sébastien de Radiguès — Chief of Staff externe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F8F8F5; --ink:#17181A; --dark:#2B2A24;
+    --muted:#65675F; --line:#E1E0DA;
+    --orange:#DE5B1F; --orange-ink:#8C3B12; --orange-soft:#FBEAE0;
+    --gold:#B98A2E; --gold-soft:#F5EBD8;
+    --rust:#A8451F; --rust-soft:#F6E4DC;
+    --r:16px;
+    box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;}
+  svg{display:block;}
+
+  header{display:flex;justify-content:space-between;align-items:center;padding:26px 0;}
+  .name{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;text-decoration:none;}
+  nav{display:flex;gap:22px;align-items:center;}
+  nav a{color:var(--muted);text-decoration:none;font-size:.92rem;border-bottom:1px solid transparent;padding-bottom:2px;transition:color .15s,border-color .15s;}
+  nav a:hover{color:var(--ink);border-color:var(--orange);}
+
+  /* HERO */
+  .hero{position:relative;padding:52px 0 0;}
+  .mark{position:absolute;top:0;right:-4px;width:70px;height:70px;opacity:.6;}
+  .kicker{display:inline-flex;align-items:center;gap:8px;background:var(--orange-soft);color:var(--orange-ink);font-size:.85rem;font-weight:600;padding:7px 14px;border-radius:999px;margin:0 0 26px;}
+  .kicker svg{width:14px;height:14px;}
+  h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.4rem,7vw,3.6rem);line-height:1.08;margin:0 0 22px;max-width:15ch;}
+  h1 em{font-style:italic;color:var(--orange-ink);}
+  .hero-sub{font-size:1.08rem;color:var(--muted);max-width:46ch;margin:0;}
+  .hero-line{display:block;overflow:hidden;}
+  .hero-line span{display:block;}
+
+  .divider{display:flex;align-items:center;gap:14px;margin:56px 0 0;}
+  .divider .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);}
+  .divider .rule{flex:1;height:1px;background:var(--line);}
+
+  /* PAIN GRID */
+  .pain-grid{display:grid;grid-template-columns:36px 1fr;gap:16px 22px;padding:44px 0;}
+  .pain-icon{width:36px;height:36px;border-radius:10px;background:var(--orange-soft);display:flex;align-items:center;justify-content:center;}
+  .pain-icon svg{width:18px;height:18px;stroke:var(--orange-ink);}
+  .pain-grid h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;margin:2px 0 8px;}
+  .pain-grid p{font-size:1.02rem;line-height:1.65;margin:0;max-width:58ch;color:var(--ink);}
+  .pain-row + .pain-row{margin-top:34px;}
+  .pain-row{display:contents;}
+
+  /* BAND */
+  .band{background:var(--dark);color:#F0EFE9;border-radius:28px;margin:0 0 60px;padding:52px 28px;}
+  .band-head{margin-bottom:8px;}
+  .band-eyebrow{font-size:.85rem;color:#F0A87C;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px;}
+  .band h2.big{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.5rem,4vw,2rem);line-height:1.25;max-width:22ch;margin:0 0 34px;}
+  .sit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .sit-card{border-radius:var(--r);padding:22px 20px;line-height:1.5;font-size:.98rem;font-weight:500;}
+  .sit-card svg{width:22px;height:22px;margin-bottom:14px;}
+  .sit-card.c1{background:var(--rust);color:#FBE4DA;}
+  .sit-card.c2{background:#3B392F;color:#F0EFE9;}
+  .sit-card.c3{background:var(--gold);color:#2A1F06;}
+  .sit-card.c1 svg,.sit-card.c2 svg{stroke:#F0A87C;}
+  .sit-card.c3 svg{stroke:#2A1F06;}
+  .qualifier{margin-top:26px;font-size:.98rem;color:#C7C5BB;max-width:60ch;}
+
+  /* DOMAINS */
+  .domains{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:8px 0 44px;}
+  .domain{border:1px solid var(--line);border-radius:var(--r);padding:28px 26px;background:#fff;}
+  .domain .d-icon{width:38px;height:38px;border-radius:10px;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .domain .d-icon svg{width:19px;height:19px;stroke:var(--orange-ink);}
+  .domain h3{font-family:'Fraunces',serif;font-weight:500;font-style:italic;font-size:1.18rem;line-height:1.35;margin:0 0 12px;}
+  .domain p{font-size:.98rem;max-width:none;line-height:1.6;}
+
+  /* METHOD BANNER */
+  .method-banner{position:relative;overflow:hidden;background:var(--orange-soft);border-radius:28px;padding:44px 34px;margin-bottom:44px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;}
+  .method-num{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-family:'Fraunces',serif;font-size:9rem;color:#F0D2BC;line-height:1;z-index:0;}
+  .method-banner > *{position:relative;z-index:1;}
+  .method-title{font-family:'Fraunces',serif;font-size:1.7rem;margin:0 0 8px;}
+  .method-sub{font-size:1rem;color:var(--orange-ink);margin:0;max-width:40ch;}
+  .pill-btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);border-radius:999px;padding:14px 24px;text-decoration:none;font-size:.95rem;font-weight:600;white-space:nowrap;transition:transform .15s ease;}
+  .pill-btn:hover{transform:translateY(-2px);}
+  .pill-btn svg{width:16px;height:16px;}
+
+  /* CTA */
+  .cta{background:var(--ink);color:var(--paper);border-radius:28px;padding:52px 34px;margin-bottom:8px;display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;}
+  .cta h2{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.5rem,4vw,2rem);line-height:1.3;margin:0;}
+  .cta-right p{color:#C9C9C2;font-size:.98rem;margin:0 0 20px;max-width:36ch;}
+  .cta .pill-btn{background:var(--orange);color:#1C0F06;}
+
+  footer{padding:64px 0 40px;text-align:center;}
+  .foot-name{font-family:'Fraunces',serif;font-size:clamp(2.4rem,9vw,4.4rem);margin:0 0 18px;line-height:1;}
+  .foot-links{display:flex;justify-content:center;gap:20px;font-size:.9rem;color:var(--muted);}
+  .foot-links a{text-decoration:none;}
+  .foot-links a:hover{color:var(--ink);}
+
+  @media (max-width:680px){
+    .sit-grid{grid-template-columns:1fr;}
+    .domains{grid-template-columns:1fr;}
+    .method-banner{grid-template-columns:1fr;text-align:left;}
+    .method-num{display:none;}
+    .cta{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){h1 .hero-line span{transform:none!important;opacity:1!important;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <a class="name" href="#">Sébastien de Radiguès</a>
+    <nav><a href="#methode">Ma méthode</a><a href="#linkedin">LinkedIn</a></nav>
+  </header>
+
+  <section class="hero">
+    <svg class="mark" viewBox="0 0 64 64" fill="none"><path d="M4 20V4H20" stroke="#DE5B1F" stroke-width="2"/><path d="M60 44V60H44" stroke="#DE5B1F" stroke-width="2"/></svg>
+    <span class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Chief of Staff externe · basé en Wallonie</span>
+    <h1 id="headline">
+      <span class="hero-line"><span>L'instinct suffit pour</span></span>
+      <span class="hero-line"><span>lancer une entreprise.</span></span>
+      <span class="hero-line"><span>Il ne suffit plus pour la <em>faire tenir</em>.</span></span>
+    </h1>
+    <p class="hero-sub">Je structure ce que vous avez construit à l'instinct, côté marketing comme côté organisation.</p>
+    <div class="divider"><span class="dot"></span><span class="rule"></span></div>
+  </section>
+
+  <section class="pain-grid">
+    <div class="pain-row">
+      <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z"/></svg></div>
+      <div>
+        <h2>Le point de bascule</h2>
+        <p>Le jour où il faut arbitrer entre trois urgences à la fois, ce qui marchait à l'instinct ne suffit plus. Vous avez construit votre entreprise ainsi, brique par brique, sans suivre de plan précis. Ça a tenu, jusqu'à un certain point.</p>
+      </div>
+    </div>
+    <div class="pain-row">
+      <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+      <div>
+        <h2>Ce que ça coûte</h2>
+        <p>Vous passez vos journées à éteindre des urgences plutôt qu'à avancer. Toutes les décisions reviennent vers vous, parce que rien n'a été structuré pour qu'il en soit autrement. Le recul nécessaire pour changer ça, vous ne l'avez plus.</p>
+      </div>
+    </div>
+    <div class="pain-row">
+      <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4L4 20" stroke-linecap="round"/></svg></div>
+      <div>
+        <h2>Mon rôle</h2>
+        <p>Je ne suis pas un consultant qui conseille sans mettre les mains dans le cambouis, ni un coach qui accompagne sans jamais faire à votre place. Je pense la stratégie et je l'exécute, ou je forme votre équipe à le faire.</p>
+        <p style="margin-top:14px;">J'ai passé sept ans à construire ce genre de structure de l'intérieur, dans un startup studio, avant de le refaire sur un département marketing entier. Vous parlez toujours à la même personne, jamais à une agence ou à une équipe de juniors.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <p class="band-eyebrow">Auto-diagnostic</p>
+    <h2 class="big">Le symptôme avant le diagnostic</h2>
+    <div class="sit-grid">
+      <div class="sit-card c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Toutes les décisions repassent par vous, même les plus mineures.</div>
+      <div class="sit-card c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>Un chiffre important change selon la personne qui vous le communique.</div>
+      <div class="sit-card c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-8H7v8M7 3h10v5H7z"/></svg>Votre équipe a grandi, mais plus personne ne sait exactement qui décide quoi.</div>
+      <div class="sit-card c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>Chaque nouvelle recrue apprend le métier en observant, rien n'est écrit nulle part.</div>
+      <div class="sit-card c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>Vous avez les bons outils, mais chacun les utilise à sa manière.</div>
+      <div class="sit-card c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>Vous savez qu'il faut structurer, sans jamais avoir le temps de vous y mettre.</div>
+    </div>
+    <p class="qualifier">Ça vous parle si votre structure a dépassé le stade où vous pouvez tout gérer seul, mais n'a pas encore de fonction Marketing ou Opérations dédiée.</p>
+  </div>
+
+  <div class="domains">
+    <div class="domain">
+      <div class="d-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-7-7 18-2-8-8-2z"/></svg></div>
+      <h3>Votre marketing produit-il des résultats, ou seulement du contenu ?</h3>
+      <p>Une équipe marketing sans direction claire travaille beaucoup et avance peu. Je pose une stratégie qui priorise, je structure ce qui manque, et j'exécute ou je transmets, ponctuellement ou en format fractionné selon vos besoins.</p>
+    </div>
+    <div class="domain">
+      <div class="d-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.14.36.5.6 1 .6H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+      <h3>Vos process tiennent-ils encore la croissance que vous visez ?</h3>
+      <p>Une organisation qui grandit sans revoir ses process ne ralentit pas progressivement. Elle craque d'un coup. Je clarifie les responsabilités, je repère les points de friction avant qu'ils ne coûtent cher, et j'intègre l'IA là où elle change vraiment l'équation.</p>
+    </div>
+  </div>
+
+  <div class="method-banner" id="methode">
+    <div>
+      <p class="method-title">Ma méthode</p>
+      <p class="method-sub">Comment j'aborde une structure, en sept principes.</p>
+    </div>
+    <a class="pill-btn" href="#">Découvrir<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+    <span class="method-num">07</span>
+  </div>
+
+  <div class="cta">
+    <h2>Discutons de votre structure.</h2>
+    <div class="cta-right">
+      <p>Ça commence par une conversation, sans engagement, pour comprendre votre situation avant de parler de quoi que ce soit d'autre.</p>
+      <a class="pill-btn" id="linkedin" href="#">Me contacter sur LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+
+  <footer>
+    <p class="foot-name">Sébastien<br>de Radiguès</p>
+    <div class="foot-links"><a href="#methode">Ma méthode</a><a href="#linkedin">linkedin.com/in/sebastienderadigues</a></div>
+  </footer>
+
+</div>
+
+<script>
+  const lines = document.querySelectorAll('.hero-line span');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  lines.forEach((el,i)=>{
+    if(reduced){ el.style.opacity='1'; return; }
+    el.style.transform='translateY(100%)'; el.style.opacity='0';
+    el.animate([{transform:'translateY(100%)',opacity:0},{transform:'translateY(0)',opacity:1}],
+      {duration:700,delay:120+i*140,easing:'cubic-bezier(.22,.9,.32,1)',fill:'both'});
+  });
+</script>
+</body>
+</html>

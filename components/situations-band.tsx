@@ -1,43 +1,68 @@
-import { Container } from "./container";
-import { CornerMark } from "./corner-mark";
+import { Icon, type IconName } from "./icon";
 
-const SITUATIONS = [
-  "Toutes les décisions repassent par vous, même les plus mineures.",
-  "Un chiffre important change selon la personne qui vous le communique.",
-  "Votre équipe a grandi, mais plus personne ne sait exactement qui décide quoi.",
-  "Chaque nouvelle recrue apprend le métier en observant, parce que rien n'est écrit nulle part.",
-  "Vous avez les bons outils, mais chacun les utilise à sa manière.",
-  "Vous savez qu'il faut structurer. Vous n'avez simplement jamais le temps de vous y mettre.",
+const TONES = {
+  rust: "bg-rust text-rust-text [&_svg]:text-orange-glow",
+  dark: "bg-dark-raised text-dark-text [&_svg]:text-orange-glow",
+  gold: "bg-gold text-gold-ink",
+};
+
+const SITUATIONS: { text: string; icon: IconName; tone: keyof typeof TONES }[] = [
+  {
+    text: "Toutes les décisions repassent par vous, même les plus mineures.",
+    icon: "clock",
+    tone: "rust",
+  },
+  {
+    text: "Un chiffre important change selon la personne qui vous le communique.",
+    icon: "trend",
+    tone: "dark",
+  },
+  {
+    text: "Votre équipe a grandi, mais plus personne ne sait exactement qui décide quoi.",
+    icon: "door",
+    tone: "gold",
+  },
+  {
+    text: "Chaque nouvelle recrue apprend le métier en observant, parce que rien n'est écrit nulle part.",
+    icon: "pen",
+    tone: "dark",
+  },
+  {
+    text: "Vous avez les bons outils, mais chacun les utilise à sa manière.",
+    icon: "briefcase",
+    tone: "rust",
+  },
+  {
+    text: "Vous savez qu'il faut structurer. Vous n'avez simplement jamais le temps de vous y mettre.",
+    icon: "hourglass",
+    tone: "gold",
+  },
 ];
 
 export function SituationsBand() {
   return (
-    <section className="bg-dark text-dark-text">
-      <Container className="py-11">
-        <h2 className="mb-[22px] text-[0.98rem] leading-[1.65] text-dark-muted">
-          Reconnaissez-vous une de ces situations ?
-        </h2>
+    <section className="mb-[60px] rounded-band bg-dark px-7 py-[52px] text-dark-text">
+      <h2 className="mb-[34px] max-w-[22ch] font-serif text-[clamp(1.5rem,4vw,2rem)] leading-[1.25] font-medium">
+        Le symptôme avant le diagnostic
+      </h2>
 
-        <ul className="grid grid-cols-1 gap-4 min-[620px]:max-w-[640px] min-[620px]:grid-cols-2">
-          {SITUATIONS.map((situation, i) => (
-            <li
-              key={situation}
-              className={`relative border border-dark-line bg-dark-card pt-5 pr-[18px] pb-[18px] pl-5 text-[0.98rem] leading-normal ${
-                i % 2 === 1 ? "min-[620px]:mt-[26px]" : ""
-              }`}
-            >
-              <CornerMark className="absolute top-2 left-2 size-3.5" />
-              {situation}
-            </li>
-          ))}
-        </ul>
+      <ul className="grid grid-cols-1 gap-4 min-[680px]:grid-cols-2">
+        {SITUATIONS.map(({ text, icon, tone }) => (
+          <li
+            key={text}
+            className={`rounded-card px-5 py-[22px] text-[0.98rem] leading-normal font-medium ${TONES[tone]}`}
+          >
+            <Icon name={icon} className="mb-3.5 size-[22px]" />
+            {text}
+          </li>
+        ))}
+      </ul>
 
-        <p className="mt-6 max-w-[60ch] text-[0.98rem] leading-[1.65] text-dark-muted">
-          Ça vous parle si votre structure a dépassé le stade où vous pouvez
-          tout gérer seul, mais n&apos;a pas encore de fonction Marketing ou
-          Opérations dédiée.
-        </p>
-      </Container>
+      <p className="mt-[26px] max-w-[60ch] text-[0.98rem] leading-[1.65] text-dark-muted">
+        Ça vous parle si votre structure a dépassé le stade où vous pouvez tout
+        gérer seul, mais n&apos;a pas encore de fonction Marketing ou Opérations
+        dédiée.
+      </p>
     </section>
   );
 }
