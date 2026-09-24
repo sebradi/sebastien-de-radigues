@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 const title = "Sébastien de Radiguès — Chief of Staff externe";
 const description =
-  "Chief of Staff externe basé en Wallonie, j'aide les startups et PME à structurer leur marketing et leurs opérations, en stratège et en exécutant.";
+  "Chief of Staff externe basé en Belgique, j'aide les startups et PME à structurer leur marketing et leurs opérations, en stratège et en exécutant.";
 
 export const metadata: Metadata = pageMetadata({
   title,

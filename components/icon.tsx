@@ -15,9 +15,8 @@ const ICONS = {
     </>
   ),
   cross: <path d="M4 4l16 16M20 4L4 20" />,
-  trend: <path d="M3 3v18h18M7 15l4-4 3 3 5-6" />,
+  diverge: <path d="M12 21v-6M12 15c0-4-6-5-6-9V3M12 15c0-4 6-5 6-9V3" />,
   door: <path d="M17 21v-8H7v8M7 3h10v5H7z" />,
-  pen: <path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z" />,
   briefcase: (
     <>
       <rect x="3" y="7" width="18" height="13" rx="2" />

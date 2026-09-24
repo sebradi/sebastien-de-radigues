@@ -1,20 +1,25 @@
 import Link from "next/link";
 import { LINKEDIN_URL } from "@/lib/site";
 
+// La zone cliquable fait au moins 44x44px ; le soulignement reste collé au texte.
 const linkClass =
-  "border-b border-transparent pb-0.5 text-muted transition-colors duration-150 hover:border-orange hover:text-ink focus-visible:border-orange focus-visible:text-ink focus-visible:outline-none";
+  "group inline-flex min-h-11 min-w-11 items-center justify-center px-1.5 text-muted transition-colors duration-150 hover:text-ink focus-visible:text-ink focus-visible:outline-none";
+const labelClass =
+  "border-b border-transparent pb-0.5 transition-colors duration-150 group-hover:border-orange group-focus-visible:border-orange";
 
 export function NavLinks({
-  linkedinLabel = "LinkedIn",
+  withPrivacy = false,
   className = "",
 }: {
-  linkedinLabel?: string;
+  withPrivacy?: boolean;
   className?: string;
 }) {
   return (
-    <nav className={`flex items-center gap-x-3.5 gap-y-2 text-[0.85rem] whitespace-nowrap sm:gap-x-[22px] sm:text-[0.92rem] ${className}`}>
+    <nav
+      className={`-mx-1.5 flex items-center gap-x-1 text-[0.85rem] whitespace-nowrap sm:gap-x-3 sm:text-[0.92rem] ${className}`}
+    >
       <Link href="/methode" className={linkClass}>
-        Ma méthode
+        <span className={labelClass}>Ma méthode</span>
       </Link>
       <a
         href={LINKEDIN_URL}
@@ -22,8 +27,13 @@ export function NavLinks({
         rel="noopener noreferrer"
         className={linkClass}
       >
-        {linkedinLabel}
+        <span className={labelClass}>Contact</span>
       </a>
+      {withPrivacy && (
+        <Link href="/confidentialite" className={linkClass}>
+          <span className={labelClass}>Confidentialité</span>
+        </Link>
+      )}
     </nav>
   );
 }

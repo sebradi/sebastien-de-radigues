@@ -13,18 +13,18 @@ const SITUATIONS: { text: string; icon: IconName; tone: keyof typeof TONES }[] =
     tone: "rust",
   },
   {
-    text: "Un chiffre important change selon la personne qui vous le communique.",
-    icon: "trend",
+    text: "Deux membres de votre équipe vous donneraient deux priorités différentes.",
+    icon: "diverge",
     tone: "dark",
   },
   {
-    text: "Votre équipe a grandi, mais plus personne ne sait exactement qui décide quoi.",
+    text: "Certains sujets n'avancent pas parce que personne n'en est clairement responsable.",
     icon: "door",
     tone: "gold",
   },
   {
-    text: "Chaque nouvelle recrue apprend le métier en observant, parce que rien n'est écrit nulle part.",
-    icon: "pen",
+    text: "Vos process ont tenu jusqu'à dix personnes. Ils ne tiennent plus à trente.",
+    icon: "users",
     tone: "dark",
   },
   {
@@ -60,8 +60,7 @@ export function SituationsBand() {
 
       <p className="mt-[26px] max-w-[60ch] text-[0.98rem] leading-[1.65] text-dark-muted">
         Ça vous parle si votre structure a dépassé le stade où vous pouvez tout
-        gérer seul, mais n&apos;a pas encore de fonction Marketing ou Opérations
-        dédiée.
+        gérer seul. Ce qui manque, c&apos;est quelqu&apos;un pour la structurer.
       </p>
     </section>
   );

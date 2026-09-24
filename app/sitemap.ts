@@ -8,5 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: SITE_URL, lastModified: LAST_MODIFIED, priority: 1 },
     { url: `${SITE_URL}/methode`, lastModified: LAST_MODIFIED, priority: 0.8 },
+    {
+      url: `${SITE_URL}/confidentialite`,
+      lastModified: new Date("2026-09-24"),
+      priority: 0.2,
+    },
   ];
 }

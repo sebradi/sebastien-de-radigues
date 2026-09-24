@@ -33,11 +33,7 @@ const personJsonLd = {
   jobTitle: "Chief of Staff externe",
   url: SITE_URL,
   sameAs: [LINKEDIN_URL],
-  address: {
-    "@type": "PostalAddress",
-    addressRegion: "Wallonie",
-    addressCountry: "BE",
-  },
+  address: { "@type": "PostalAddress", addressCountry: "BE" },
   knowsAbout: [
     "Structuration opérationnelle",
     "Marketing",

@@ -6,7 +6,7 @@ import { NavLinks } from "./nav-links";
 export function SiteHeader() {
   return (
     <Container>
-      <header className="flex items-center justify-between gap-3 py-[26px]">
+      <header className="flex items-center justify-between gap-3 py-[14px]">
         <Link href="/" className="shrink-0 font-serif text-[0.98rem] sm:text-[1.05rem] font-semibold whitespace-nowrap">
           {SITE_NAME}
         </Link>
