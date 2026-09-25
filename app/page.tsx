@@ -27,9 +27,7 @@ export default function Home() {
         <section className="space-y-[34px] py-11">
           <SectionRow icon="sparkle" title="Le point de bascule">
             <p>
-              Le jour où il faut arbitrer entre trois urgences à la fois, ce qui
-              marchait à l&apos;instinct ne suffit plus. Vous avez construit
-              votre entreprise ainsi, brique par brique, sans suivre de plan
+              Vous avez construit votre entreprise brique par brique, sans plan
               précis. Ça a tenu, jusqu&apos;à un certain point.
             </p>
           </SectionRow>
@@ -37,26 +35,23 @@ export default function Home() {
             <p>
               Vous passez vos journées à éteindre des urgences plutôt
               qu&apos;à avancer. Toutes les décisions reviennent vers vous,
-              parce que rien n&apos;a été structuré pour qu&apos;il en soit
-              autrement. Le recul nécessaire pour changer ça, vous ne
+              faute de structure. Le recul pour changer ça, vous ne
               l&apos;avez plus.
             </p>
           </SectionRow>
           <SectionRow icon="cross" title="Mon rôle">
             <p>
-              Je m&apos;appelle Sébastien. Je ne suis pas un consultant qui
-              conseille sans jamais mettre les mains dans le cambouis, ni un
-              coach qui accompagne sans jamais faire à votre place. Je pense la
-              stratégie et je l&apos;exécute, ou je forme votre équipe à le
-              faire.
+              Je pense la stratégie et je l&apos;exécute, ou je forme votre
+              équipe à le faire. Pas un conseil qui reste sur le papier. Pas un
+              accompagnement qui s&apos;arrête au bord du terrain.
             </p>
             <p>
-              J&apos;ai passé sept ans à construire ce genre de structure de
-              l&apos;intérieur, dans un startup studio, avant de le refaire sur
-              un département marketing entier. J&apos;interviens
-              aujourd&apos;hui comme Chief of Staff externe, en partenaire
-              opérationnel indépendant : vous parlez toujours à la même
-              personne, jamais à une agence ou à une équipe de juniors.
+              Sept ans dans un startup studio, à aider des startups à passer
+              d&apos;une idée floue à un projet qui tient debout. Un an et demi
+              de plus à la tête d&apos;un département marketing, avec la même
+              logique. Aujourd&apos;hui, Chief of Staff externe, en partenaire
+              opérationnel indépendant. Un point de contact unique, du
+              diagnostic à l&apos;exécution.
             </p>
           </SectionRow>
         </section>
@@ -69,9 +64,9 @@ export default function Home() {
             title="Votre marketing produit-il des résultats, ou seulement du contenu ?"
           >
             Une équipe marketing sans direction claire travaille beaucoup et
-            avance peu. Je pose une stratégie qui priorise, je structure ce qui
-            manque, et j&apos;exécute ou je transmets, ponctuellement ou en
-            format fractionné selon vos besoins.
+            avance peu. Je pose une stratégie, je structure ce qui manque,
+            j&apos;exécute ou je transmets, ponctuellement ou en format
+            fractionné.
           </DomainCard>
           <DomainCard
             icon="gear"
@@ -80,8 +75,8 @@ export default function Home() {
             Une organisation qui grandit sans revoir ses process ne ralentit pas
             progressivement. Elle craque d&apos;un coup. Je clarifie les
             responsabilités, je repère les points de friction avant qu&apos;ils
-            ne coûtent cher, et j&apos;intègre l&apos;IA là où elle change
-            vraiment l&apos;équation.
+            ne coûtent cher. J&apos;intègre l&apos;IA là où elle change
+            l&apos;équation.
           </DomainCard>
         </section>
 

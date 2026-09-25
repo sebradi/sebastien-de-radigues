@@ -11,9 +11,8 @@ export function CtaBand() {
         </h2>
         <div>
           <p className="mb-5 max-w-[36ch] text-[0.98rem] leading-[1.65] text-subtle">
-            La suite, ça commence par une conversation, sans engagement, pour
-            comprendre votre situation avant de parler de quoi que ce soit
-            d&apos;autre.
+            Ça commence par une conversation, sans engagement, pour comprendre
+            votre situation.
           </p>
           <PillButton href={LINKEDIN_URL} variant="orange" external>
             Me contacter sur LinkedIn
